@@ -18,7 +18,7 @@ export function Contact() {
             <h2 className="text-4xl md:text-6xl font-bold mb-4 text-foreground tracking-tight">
               {CONTACT_DATA.titlePrefix} <span className="text-secondary font-normal">{CONTACT_DATA.titleHighlight}</span> {CONTACT_DATA.titleSuffix}
             </h2>
-            <p className="text-secondary text-lg">
+            <p className="text-secondary text-xl">
               {CONTACT_DATA.subtitle}
             </p>
           </motion.div>
