@@ -21,17 +21,12 @@ jobs:
           git config --global user.name "sync-bot"
           git config --global user.email "sync@bot.com"
 
+          # Remove the .github directory from the local commit history so it isn't pushed to the target
+          git rm -rf .github
+          git commit -m "Auto-sync without .github workflows"
+
           # Add target repo as remote
           git remote add target https://${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git
 
-
-         # Remove old files except .git
-        cd target
-        find . -mindepth 1 -not -path "./.git*" -delete
-
-        # Copy files from source (excluding .github)
-         rsync -av --exclude='.git' --exclude='.github' ../ ./
-
-
-          # Push dev branch directly
+          # Push the modified dev branch directly
           git push target HEAD:dev --force
