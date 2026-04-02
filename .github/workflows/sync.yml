@@ -24,5 +24,14 @@ jobs:
           # Add target repo as remote
           git remote add target https://${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git
 
+
+         # Remove old files except .git
+        cd target
+        find . -mindepth 1 -not -path "./.git*" -delete
+
+        # Copy files from source (excluding .github)
+         rsync -av --exclude='.git' --exclude='.github' ../ ./
+
+
           # Push dev branch directly
           git push target HEAD:dev --force
