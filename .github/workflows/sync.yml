@@ -1,18 +1,33 @@
-- name: Sync code to port2
-  run: |
-    git config --global user.name "sync-bot"
-    git config --global user.email "sync@bot.com"
+name: Sync to port2 repo
 
-    git clone https://x-access-token:${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git target
+on:
+  push:
+    branches:
+      - dev
 
-    rsync -av --delete \
-      --exclude '.git' \
-      --exclude '.github' \
-      --ignore-errors \
-      ./ target/
+jobs:
+  sync:
+    runs-on: ubuntu-latest
 
-    cd target
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
 
-    git add .
-    git commit -m "Auto sync from My-Portfolio dev" || echo "No changes"
-    git push origin dev
+      - name: Sync code to port2
+        run: |
+          git config --global user.name "sync-bot"
+          git config --global user.email "sync@bot.com"
+
+          git clone https://x-access-token:${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git target
+
+          rsync -av --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --ignore-errors \
+            ./ target/
+
+          cd target
+
+          git add .
+          git commit -m "Auto sync from My-Portfolio dev" || echo "No changes"
+          git push origin dev
