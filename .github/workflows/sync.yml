@@ -22,4 +22,4 @@ jobs:
           git remote add target https://x-access-token:${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git
 
           # Push dev branch directly
-          git push target dev:dev --force
+          git push target HEAD:dev --force
