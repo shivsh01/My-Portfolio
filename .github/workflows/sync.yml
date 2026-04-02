@@ -13,21 +13,13 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
 
-      - name: Sync code to port2
+      - name: Push to port2 repo
         run: |
           git config --global user.name "sync-bot"
           git config --global user.email "sync@bot.com"
 
-          git clone https://x-access-token:${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git target
+          # Add target repo as remote
+          git remote add target https://x-access-token:${{ secrets.PORT_REPO_TOKEN }}@github.com/shivsh01/port2.git
 
-          rsync -av --delete \
-            --exclude '.git' \
-            --exclude '.github' \
-            --ignore-errors \
-            ./ target/
-
-          cd target
-
-          git add .
-          git commit -m "Auto sync from My-Portfolio dev" || echo "No changes"
-          git push origin dev
+          # Push dev branch directly
+          git push target dev:dev --force
