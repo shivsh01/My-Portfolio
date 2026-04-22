@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 export const SITE_CONFIG = {
   name: "Shivam Sharma",
   logoText: "ShivamSharma",
-  role: "Frontend Developer",
+  role: "Full Stack Developer",
   email: "shivamsharma23jan@gmail.com",
 };
 

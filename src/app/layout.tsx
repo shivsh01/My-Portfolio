@@ -7,8 +7,8 @@ import { Header } from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shivam Sharma | Frontend Developer",
-  description: "Personal Portfolio of Shivam Sharma - Frontend Developer specializing in React and Next.js",
+  title: "Shivam Sharma | Full Stack Developer",
+  description: "Personal Portfolio of Shivam Sharma - Full Stack Developer specializing in React and Next.js",
 };
 
 export default function RootLayout({
