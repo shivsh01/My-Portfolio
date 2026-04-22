@@ -1,3 +1,4 @@
+import { image } from "framer-motion/client";
 import { Atom, Server, Database, Palette, GitBranch, Shield, Zap, Workflow, Gem, Coffee } from "lucide-react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
@@ -25,7 +26,7 @@ export const HERO_DATA = {
   techStack: "{ JavaScript, TypeScript, React, Next.js, Node.js, MongoDB, Tailwind CSS }",
   description: "Specializing in React & Next.js. I leverage cutting-edge technologies to build highly interactive and performant web projects.",
   ctaPrimary: { label: "See my dev work", href: "#portfolio" },
-  ctaSecondary: { label: "Download CV", href: "#" },
+  ctaSecondary: { label: "Download CV", href: "https://drive.google.com/file/d/1tPQb-6kfv02RjB0uTsHR5xbttSHKmuAJ/view?usp=sharing" },
   social: [
     { label: "GitHub", href: "https://github.com/shivsh01", icon: <FaGithub size={28} /> },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/shivam-sharma-859891250", icon: <FaLinkedin size={28} /> },
@@ -170,23 +171,23 @@ export const WORK_EXPERIENCE_DATA = [
     ],
     tags: ["Node.js", "Express", "MongoDB", "Stripe"]
   },
-  {
-    id: "05",
-    company: "CBS ERP PLATFORM",
-    role: "Backend Developer",
-    type: "Contract",
-    date: "Dec 2025",
-    link: "#",
-    logoBg: "bg-purple-500/20",
-    logoColor: "text-purple-500",
-    icon: <Shield size={24} />,
-    responsibilities: [
-      "Built a multi-tenant SaaS ERP system with database-per-tenant isolation and JWT-based tenant resolution.",
-      "Implemented bitwise RBAC, payroll automation via cron jobs, audit logs, and real-time updates using SSE.",
-      "Integrated AWS S3 for secure document storage and implemented scalable service-based backend architecture."
-    ],
-    tags: ["Node.js", "TypeScript", "Express", "MongoDB", "AWS"]
-  }
+  // {
+  //   id: "05",
+  //   company: "CBS ERP PLATFORM",
+  //   role: "Backend Developer",
+  //   type: "Contract",
+  //   date: "Dec 2025",
+  //   link: "#",
+  //   logoBg: "bg-purple-500/20",
+  //   logoColor: "text-purple-500",
+  //   icon: <Shield size={24} />,
+  //   responsibilities: [
+  //     "Built a multi-tenant SaaS ERP system with database-per-tenant isolation and JWT-based tenant resolution.",
+  //     "Implemented bitwise RBAC, payroll automation via cron jobs, audit logs, and real-time updates using SSE.",
+  //     "Integrated AWS S3 for secure document storage and implemented scalable service-based backend architecture."
+  //   ],
+  //   tags: ["Node.js", "TypeScript", "Express", "MongoDB", "AWS"]
+  // }
 ];
 
 export const PROJECTS_FILTERS = ["All", "Apps", "Websites", "Games"];
@@ -194,27 +195,30 @@ export const PROJECTS_FILTERS = ["All", "Apps", "Websites", "Games"];
 export const PROJECTS_DATA = [
   {
     title: "Store-Env",
-    tech: "Next.js • TypeScript • NextAuth",
+    tech: "Next.js • TypeScript • CryptoJS ",
     description: "Developed a secure platform for managing and encrypting environment variables using CryptoJS.",
-    github: "#",
-    live: "#",
-    type: "Apps"
+    github: "https://github.com/shivsh01/StoreEnv",
+    live: "https://store-env-lilac.vercel.app/",
+    type: "Websites",
+    image: "/store-env.png"
   },
   {
     title: "The Rankers",
     tech: "React.js • Express • MongoDB",
     description: "Built a dynamic web app using Octokit API to visualize GitHub data in real-time with leaderboard ranking.",
-    github: "#",
-    live: "#",
-    type: "Apps"
+    github: "https://github.com/shivsh01/THE_RANKERS",
+    live: "https://the-rankers.vercel.app/",
+    type: "Websites",
+    image: "/rankers.png"
   },
   {
     title: "Multi-Tenant ERP",
     tech: "Node.js • Express • AWS",
     description: "Built a SaaS ERP system with database-per-tenant isolation, bitwise RBAC, and real-time updates.",
-    github: "#",
+    github: "https://github.com/shivsh01/CBS-Backend",
     live: "#",
-    type: "Websites"
+    type: "Websites",
+    image: "/image.png"
   }
 ];
 

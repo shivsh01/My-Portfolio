@@ -38,7 +38,7 @@ export function Projects() {
             transition={{ delay: 0.2 }}
             className="flex justify-center gap-4 mb-16"
           >
-            {PROJECTS_FILTERS.map((f) => (
+            {/* {PROJECTS_FILTERS.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
@@ -50,7 +50,7 @@ export function Projects() {
               >
                 {f}
               </button>
-            ))}
+            ))} */}
           </motion.div>
         </div>
 
@@ -65,10 +65,13 @@ export function Projects() {
               className="group"
             >
               <div className="w-full h-48 bg-accent rounded-2xl mb-6 overflow-hidden relative flex items-center justify-center border border-border">
-                {/* Placeholder for project mockups */}
-                <div className="flex items-center justify-center h-full text-secondary font-mono text-sm">
-                  [ Project Screenshot ]
-                </div>
+                {project.image ? (
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="flex items-center justify-center h-full text-secondary font-mono text-sm">
+                    [ Project Screenshot ]
+                  </div>
+                )}
               </div>
               <p className="text-secondary text-xs font-mono mb-3">{project.tech}</p>
               <h3 className="text-foreground text-2xl font-bold mb-4">{project.title}</h3>
