@@ -18,9 +18,9 @@ export function Hero() {
         <h1 className="text-3xl md:text-4xl lg:text-8xl font-bold tracking-tight text-foreground mb-4">
           {HERO_DATA.title}
         </h1>
-        <div className="flex flex-wrap gap-4 justify-center mb-6">
+        <div className="flex flex-wrap gap-3 justify-center mb-6">
             {HERO_DATA.generalBtn.map((btn, idx) => (
-                <span key={idx} className="text-sm md:text-base text-secondary bg-white/10 transparent font-mono px-4 py-1 border border-border rounded-full">
+                <span key={idx} className="text-sm md:text-base text-secondary bg-accent font-mono px-4 py-1 border border-border rounded-full">
                     {btn.label}
                 </span>
             ))}
@@ -32,12 +32,14 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
             href={HERO_DATA.ctaPrimary.href}
-            className="bg-primary text-background px-8 py-3.5 rounded-full font-bold hover:bg-primary/90 transition-colors shadow-[0_0_15px_var(--color-primary)] opacity-90"
+            className="bg-primary text-background px-8 py-3.5 rounded-full font-bold hover:bg-primary/90 transition-colors"
           >
             {HERO_DATA.ctaPrimary.label}
           </a>
           <a
             href={HERO_DATA.ctaSecondary.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-secondary px-8 py-3.5 rounded-full font-medium hover:text-foreground transition-all underline decoration-border hover:decoration-foreground underline-offset-8"
           >
             {HERO_DATA.ctaSecondary.label}
@@ -47,7 +49,7 @@ export function Hero() {
             <ul className="flex gap-6 justify-center mt-12 ">
                 {HERO_DATA.social.map((social, idx) => (
                     <li key={idx}>
-                        <a href={social.href} className="inline-block hover:scale-125 transition-transform duration-300 text-secondary hover:text-foreground">
+                        <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="inline-block hover:scale-110 transition-transform duration-300 text-secondary hover:text-primary">
                             {social.icon}
                         </a>
                     </li>

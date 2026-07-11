@@ -7,29 +7,38 @@
   --color-secondary: var(--secondary);
   --color-border: var(--border);
   --color-accent: var(--accent);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, "SFMono-Regular", monospace;
 }
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #020617;
-    --primary: #0ce4f7;
-    --secondary: #64748b;
-    --border: #e2e8f0;
-    --accent: #f1f5f9;
+    /* Dark-only theme */
+    color-scheme: dark;
+    --background: #0a0a0a;   /* near-black, not pure */
+    --foreground: #e5e5e5;   /* soft off-white */
+    --primary: #34d399;      /* muted electric emerald — single accent */
+    --secondary: #8a8a8a;
+    --border: #1f1f1f;
+    --accent: #141414;       /* card / surface */
   }
 
-  .dark {
-    --background: #091413;
-    --foreground: #f8fafc;
-    --primary: #4b8570;
-    --secondary: #94a3b8;
-    --border: #1e293b;
-    --accent: #1f2937;
+  html {
+    scroll-behavior: smooth;
+    /* offset for the sticky header when jumping to anchors */
+    scroll-padding-top: 6rem;
   }
-}
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--background);
+  }
 }
