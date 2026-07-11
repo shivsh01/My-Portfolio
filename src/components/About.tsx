@@ -28,7 +28,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-secondary text-xs md:text-sm font-bold tracking-widest uppercase mb-12 md:mb-20"
+          className="text-secondary text-xs md:text-sm font-mono tracking-widest uppercase mb-12 md:mb-20"
         >
           {ABOUT_TYPOGRAPHY.sectionTitle}
         </motion.p>
@@ -56,18 +56,12 @@ export function About() {
           </div>
 
           <div className="flex flex-wrap gap-x-3 md:gap-x-6 mt-1 md:mt-2 items-center">
-            <span className="flex items-center">
-              PERF
-              <span className="inline-flex items-center justify-center w-[0.8em] h-[0.8em] rounded-full bg-primary text-background mx-1 md:mx-2 lg:mx-3 shrink-0">
-                 <Sparkle className="w-[45%] h-[45%] fill-background" />
-              </span>
-              RMANCE. 
-            </span>
+            <span className="text-primary">PERFORMANCE.</span>
           </div>
 
         </motion.div>
 
-         <div className="mt-32 md:mt-28 grid md:grid-cols-2 gap-12 lg:gap-24 items-start pb-8">
+         <div className="mt-24 md:mt-28 max-w-3xl pb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,19 +80,6 @@ export function About() {
               ))}
             </div>
           </motion.div>
-          
-          {/* <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center md:justify-end md:sticky md:top-32"
-          >
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-accent to-background border border-border shadow-2xl flex items-center justify-center group pointer-events-none">
-               <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-500" />
-               <p className="text-secondary font-mono text-sm relative z-10">{ABOUT_DATA.photoAlt}</p>
-            </div>
-          </motion.div> */}
         </div>
       </div>
     </section>

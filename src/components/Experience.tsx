@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { WORK_EXPERIENCE_DATA } from "@/config/data";
@@ -12,14 +11,14 @@ export function Experience() {
     <section id="experience" className="py-20 md:py-4 bg-background relative">
       <div className="container mx-auto px-4 max-w-7xl">
           <div className="mb-12">
-            <p className="text-secondary text-sm font-bold tracking-widest uppercase mb-4">Experience</p>
+            <p className="text-secondary text-sm font-mono tracking-widest uppercase mb-4">(EXPERIENCE)</p>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight"
             >
-              Where I've <span className="text-primary">Worked</span>
+              Where I&apos;ve <span className="text-primary">Worked</span>
             </motion.h2>
           </div>
           
