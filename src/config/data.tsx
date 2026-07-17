@@ -62,17 +62,17 @@ export const ABOUT_TYPOGRAPHY = {
 export const WORK_EXPERIENCE_DATA = [
   {
     id: "01",
-    company: "Credible Finance",
+    company: "Fintech Company",
     role: "Full Stack Developer",
-    type: "Part-time",
+    type: "Freelance",
     date: "Dec 2025 - Present",
-    link: "https://x.com/crediblefin",
+    link: "",
     logoBg: "bg-primary/15",
     logoColor: "text-primary",
     icon: <Workflow size={24} />,
     responsibilities: [
       "Authored the multi-chain wallet layer (Solana + EVM) — wallet connection, auth and network switching.",
-      "Built NestJS KYB onboarding (Persona, Sphere, Iron/MoonPay) and payout/offramp pipelines."
+      "Built NestJS KYB onboarding (Persona) and payout/offramp pipelines."
     ],
     tags: ["Solana", "EVM", "NestJS", "Next.js", "TypeScript"]
   },
